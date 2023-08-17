@@ -1,0 +1,4 @@
+rails generate model User name:string photo:string bio:text post_counter:integer
+rails generate model Post author:references title:string text:text comments_counter:integer like_counter:integer
+rails generate model Comment user:references post:references text:text
+rails generate model Like user_id:references post:references
