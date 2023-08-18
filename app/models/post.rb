@@ -21,5 +21,3 @@ class Post < ApplicationRecord
     comments.order(created_at: :desc).limit(limit)
   end
 end
-
-
