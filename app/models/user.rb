@@ -3,7 +3,7 @@ class User < ApplicationRecord
   has_many :likes, foreign_key: :author_id
   has_many :comments, foreign_key: :author_id
 
-  def rent_posts(limit = 3)
-    posts.order(created_at: :desc).limit(limit)
+  def rent_posts
+    posts.order(created_at: :desc).limit(3)
   end
 end
