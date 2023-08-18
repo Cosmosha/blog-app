@@ -11,7 +11,7 @@ RSpec.describe Post, type: :model do
 
   subject do
     Post.new(
-      author: author,
+      author:,
       title: 'Hello RoR',
       text: 'it working'
     )
@@ -59,7 +59,7 @@ RSpec.describe Post, type: :model do
     it 'should return five recent comments' do
       5.times do |i|
         Comment.create(
-          author: author,
+          author:,
           post: subject,
           text: "comment#{i + 1}",
           created_at: (i + 1).days.ago
@@ -68,5 +68,5 @@ RSpec.describe Post, type: :model do
 
       expect(subject.recent_comments.length).to eql(5)
     end
-  end 
+  end
 end

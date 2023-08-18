@@ -11,13 +11,13 @@ RSpec.describe Like, type: :model do
 
   let(:post) do
     Post.create(
-      author: author,
+      author:,
       title: 'Hello RoR',
       text: 'it working'
     )
   end
 
-  subject { Like.new(author: author, post: post) }
+  subject { Like.new(author:, post:) }
 
   describe '#update_likes_counter' do
     it 'increases the likes counter by 1' do

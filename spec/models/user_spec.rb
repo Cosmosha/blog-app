@@ -1,11 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  subject { User.new(
-    name: 'Tom',
-    photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
-    bio: 'Teacher from Mexico.'
-  ) }
+  subject do
+    User.new(
+      name: 'Tom',
+      photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
+      bio: 'Teacher from Mexico.'
+    )
+  end
 
   before { subject.save }
 
@@ -37,5 +39,4 @@ RSpec.describe User, type: :model do
       expect(subject.recent_posts.to_a).to eql([post3, post2, post1])
     end
   end
-
 end

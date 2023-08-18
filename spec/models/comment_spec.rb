@@ -11,7 +11,7 @@ RSpec.describe Comment, type: :model do
 
   let(:post) do
     Post.create(
-      author: author,
+      author:,
       title: 'Hello RoR',
       text: 'it working'
     )
@@ -19,8 +19,8 @@ RSpec.describe Comment, type: :model do
 
   subject do
     Comment.new(
-      author: author,
-      post: post,
+      author:,
+      post:,
       text: 'A good one'
     )
   end
@@ -33,8 +33,8 @@ RSpec.describe Comment, type: :model do
 
     it 'should decrease comments counter after destroy' do
       comment = Comment.create(
-        author: author,
-        post: post,
+        author:,
+        post:,
         text: 'A good one'
       )
 
