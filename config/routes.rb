@@ -1,3 +1,10 @@
 Rails.application.routes.draw do
-  resources :users, :posts, :pages
+  #User Controller
+  resources :users, only: [:index, :show]
+
+  #Posts Controller
+  resources :posts, only: [:index, :show]
+
+  #Pages Controller
+  get 'pages/index'
 end
