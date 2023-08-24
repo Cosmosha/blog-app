@@ -39,7 +39,7 @@ RSpec.describe 'Users', type: :request do
     end
 
     it 'renders a correct template' do
-      get user_show_path(1)
+      get '/users/show'
       expect(response).to render_template(:show)
     end
 
