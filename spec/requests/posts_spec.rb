@@ -7,7 +7,7 @@ RSpec.describe 'Posts', type: :request do
         name: 'Vilis',
         photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
         bio: 'Teacher from Latvia.',
-        posts_counter: 6
+        posts_counter: 7
       )
     end
 
