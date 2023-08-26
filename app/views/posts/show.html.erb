@@ -1,7 +1,25 @@
-<html>
-  <body>
-    <h1>Show Posts by user</h1>
-    <p>My 1st post</p>
-    <p>My 2nd post</p>
-  </body>
-</html>
+
+<% if @post %>
+  <div class='container border rounded'>
+    <div class='container'>
+      <h3 class='d-flex justify-content-start'>"<%= @post.title %>" by <%= @post.author.name %></h3>
+      
+      <div class='d-flex justify-content-end'>
+        <h3>Likes <%= @post.likes_counter %></h3> &nbsp;
+        <h3>Comments <%= @post.comments_counter %><h3>
+      </div>
+      <p class='container'><%= @post.text %></p>
+      
+    </div>
+  </div>
+  <div class='container border rounded'>
+      <% @post.comments.each do |comment| %>
+          <div class='d-flex justify-content-start'>
+            <strong><%= comment.author.name %>: </strong>
+            <p><%= comment.text %></p>
+          </div>
+      <% end %>
+  </div>
+<% else %>
+  <h1>No Post found</h1>
+<% end %>
