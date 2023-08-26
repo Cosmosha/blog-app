@@ -25,8 +25,8 @@
       <hr />
       <div>
         <% post.recent_comments.each do |comment| %>
-          <div class='d-flex pb-2 justify-content-start'>
-            <strong><%= comment.author.name %>: </strong>
+          <div class='d-flex pb-2 justify-content-start gap-2'>
+            <strong class='pl-2'><%= comment.author.name %>: </strong>
             <p><%= comment.text %></p>
           </div>
         <% end %>
