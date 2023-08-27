@@ -23,3 +23,13 @@
 <% else %>
   <h1>No Post found</h1>
 <% end %>
+
+<%= form_with url: user_post_likes_path(params[:user_id], @post), method: :post do |form| %>
+  <%= form.hidden_field :post_id, value: @post.id %>
+  <%= form.submit 'Like post 👍', class: 'btn btn-danger mt-3' %>
+  <%= link_to 'Add comment 😮', new_user_post_comment_path(params[:user_id], @post), class: 'btn btn-primary mt-3' %>
+<% end %>
+
+<div class='d-flex justify-content-end'>
+  <%= link_to '⬅ Back', root_path, class: 'nav-link' %>
+</div>

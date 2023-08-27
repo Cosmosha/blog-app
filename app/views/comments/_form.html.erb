@@ -1,0 +1,10 @@
+<%= form_with(model: @comment, url: user_post_comments_path(@user, @post)) do |form| %>
+  <%= form.hidden_field :post_id, value: @post.id %>
+  <%= form.label :text, 'Comment', class: 'form-label' %>
+  <%= form.text_area :text, class: 'form-control', rows: '5' %>
+  <br/>
+  <div class="d-flex justify-content-between">
+    <%= link_to '⬅ Back', root_path, class: 'nav-link' %>
+    <%= form.submit 'Create Comment', class: 'btn btn-success px-4' %>
+  </div>
+<% end %>
