@@ -1,0 +1,17 @@
+<div class="row d-flex justify-content-start">
+  <h1>Add new post</h1>
+  <%= form_with(model: @post, url: user_posts_path(current_user)) do |form| %>
+    <%= form.label :title, 'Title', class: 'form-label' %>
+    <%= form.text_field :title, class: 'form-control' %>
+    <%= form.label :text, 'Content', class: 'form-label' %>
+    <%= form.text_area :text, class: 'form-control', rows: '5' %>
+    <br/>
+    <div class="d-flex justify-content-between">
+      <%= link_to '⬅ Back', root_path, class: 'nav-link' %>
+      <%= form.submit 'Create Post', class: 'btn btn-success px-4' %>
+    </div>
+  <% end %>
+  <% @post.errors.full_messages_for(:title).each do |message| %>
+    <p><%= message %></p>
+  <% end %>
+</div>
