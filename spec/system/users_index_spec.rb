@@ -1,16 +1,16 @@
 require 'rails_helper'
 
-RSpec.describe "User/Index" do
+RSpec.describe 'User/Index' do
   before do
     driven_by(:rack_test)
     @users = [
       User.create(name: 'Test User', bio: 'it me again', photo: 'https://picsum.photos/200/300', posts_counter: 1),
-      User.create(name: 'Test User 2', bio: 'Me is all me again', photo: 'https://picsum.photos/200/300', posts_counter: 1)
+      User.create(name: 'Test User 2', bio: 'Me is all me again', photo: 'https://picsum.photos/200/300',
+                  posts_counter: 1)
     ]
   end
 
-  describe "index page" do
-  
+  describe 'index page' do
     it 'should display username' do
       visit '/users'
       @users.each do |user|
@@ -38,7 +38,5 @@ RSpec.describe "User/Index" do
       click_link user.name
       expect(current_path).to eq(user_path(user.id))
     end
-
   end
-  
 end
