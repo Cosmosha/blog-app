@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'User/Index' do
+RSpec.describe 'User/Index', type: :system do
   before do
     driven_by(:rack_test)
     @users = [
