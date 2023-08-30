@@ -35,14 +35,13 @@ RSpec.describe "Users", type: :system do
       expect(page).to have_content(user.bio)
     end
 
-    # it "I can see the user's first 3 posts." do
-    #   user = User.first
-    #   visit user_path(user)
+    it "I can see the user's first 3 posts." do
+      visit user_path(user)
 
-    #   expect(page).to have_content('Post #1')
-    #   expect(page).to have_content('Post #2')
-    #   expect(page).to have_content('Post #3')
-    # end
+      expect(page).to have_content(post.title)
+      expect(page).to have_content(post.title)
+      expect(page).to have_content(post.title)
+    end
 
     it "I can see a button that lets me view all of a user's posts." do
       visit user_path(user)
