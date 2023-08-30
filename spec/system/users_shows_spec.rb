@@ -21,12 +21,12 @@ RSpec.describe "Users", type: :system do
       expect(page).to have_content(user.name)
     end
 
-  #   it 'I can see the number of posts the user has written.' do
-  #     user = User.first
-  #     visit user_path(user)
+    it 'I can see the number of posts the user has written.' do
+      user = User.first
+      visit user_path(user)
 
-  #     expect(page).to have_content(user.posts_counter)
-  #   end
+      expect(page).to have_content(user.posts_counter)
+    end
 
   #   it "I can see the user's bio." do
   #     user = User.first
