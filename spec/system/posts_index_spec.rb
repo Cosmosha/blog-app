@@ -22,7 +22,7 @@ RSpec.describe 'Post/Index', type: :system do
     end
 
     it 'displays the number of posts the user has written' do
-      expect(page).to have_content("Number of Posts: 3")
+      expect(page).to have_content('Number of Posts: 3')
     end
 
     it 'displays a post\'s title' do
