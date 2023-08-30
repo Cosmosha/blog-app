@@ -44,12 +44,11 @@ RSpec.describe "Users", type: :system do
     #   expect(page).to have_content('Post #3')
     # end
 
-    # it "I can see a button that lets me view all of a user's posts." do
-    #   user = User.first
-    #   visit user_path(user)
+    it "I can see a button that lets me view all of a user's posts." do
+      visit user_path(user)
 
-    #   assert_text 'See all posts'
-    # end
+     expect(page).to have_content('See all posts')
+    end
 
     it "When I click a user's post, it redirects me to that post's show page." do
       visit user_path(user)
