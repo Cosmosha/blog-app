@@ -3,25 +3,33 @@ require 'rails_helper'
 RSpec.describe "User/Index" do
   before do
     driven_by(:rack_test)
+    @users = [
+      User.create(name: 'Test User', bio: 'it me again', photo: 'https://picsum.photos/200/300', posts_counter: 1),
+      User.create(name: 'Test User 2', bio: 'Me is all me again', photo: 'https://picsum.photos/200/300', posts_counter: 1)
+    ]
   end
 
   describe "index page" do
   
-    user = User.create(name: 'Test User', bio: 'it me again', photo: 'https://picsum.photos/200/300', posts_counter: 1)
-
     it 'should display username' do
       visit '/users'
-      expect(page).to have_content(user.name)
+      @users.each do |user|
+        expect(page).to have_content(user.name)
+      end
     end
 
     it 'should display photo' do
       visit '/users'
-      expect(page).to have_selector("img[src*='#{user.photo}']")
+      @users.each do |user|
+        expect(page).to have_selector("img[src='#{user.photo}']")
+      end
     end
 
     it 'should display number of posts' do
       visit '/users'
-      expect(page).to have_content("Number of Posts: #{user.posts_counter}")
+      @users.each do |user|
+        expect(page).to have_content("Number of Posts: #{user.posts_counter}")
+      end
     end
 
     it 'should redirect to the user show page' do
