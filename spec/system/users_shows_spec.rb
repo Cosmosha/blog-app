@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Users", type: :system do
+RSpec.describe 'Users', type: :system do
   before do
     driven_by(:rack_test)
   end
@@ -8,7 +8,7 @@ RSpec.describe "Users", type: :system do
   describe 'Show page' do
     let(:user) { User.create(name: 'Test User', bio: 'its me again jah jah', photo: 'https://picsum.photos/200/300', posts_counter: 1) }
     let!(:post) { user.posts.create(title: 'Test Post', text: 'This is the body of the post.', author_id: user.id) }
-    
+
     it "I can see the user's profile picture." do
       visit user_path(user)
       expect(page).to have_selector("img[src='#{user.photo}']")
@@ -46,7 +46,7 @@ RSpec.describe "Users", type: :system do
     it "I can see a button that lets me view all of a user's posts." do
       visit user_path(user)
 
-     expect(page).to have_content('See all posts')
+      expect(page).to have_content('See all posts')
     end
 
     it "When I click a user's post, it redirects me to that post's show page." do
