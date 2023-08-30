@@ -5,4 +5,13 @@ RSpec.describe "UsersShows", type: :system do
     driven_by(:rack_test)
   end
 
+  describe 'Show page' do
+    user = User.create(name: 'Test User', bio: 'it me again', photo: 'https://picsum.photos/200/300', posts_counter: 1)
+    let(:user) { create(:user, :post) }
+    let(:post) { create(:post, user:) }
+
+    before do
+      visit user_path(user)
+    end
+  end
 end
