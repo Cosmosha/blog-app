@@ -51,13 +51,12 @@ RSpec.describe "Users", type: :system do
     #   assert_text 'See all posts'
     # end
 
-    # it "When I click a user's post, it redirects me to that post's show page." do
-    #   user = User.first
-    #   visit user_path(user)
-    #   click_on 'Post #1'
+    it "When I click a user's post, it redirects me to that post's show page." do
+      visit user_path(user)
+      click_on post.title
 
-    #   expect(page).to have_current_path(user_post_path(user, user.posts.first))
-    # end
+      expect(page).to have_current_path(user_post_path(user.id, post.id))
+    end
 
     it "When I click to see all posts, it redirects me to the user's post's index page." do
       visit user_path(user)
