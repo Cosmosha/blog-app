@@ -14,13 +14,13 @@
  *= require_self
  */
 
-
- .login-container {
+.login-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
+
 .login-form {
   max-width: 400px;
   width: 100%;
@@ -35,6 +35,7 @@
   align-items: center;
   height: 100vh;
 }
+
 .signup-form {
   max-width: 400px;
   width: 100%;
@@ -49,6 +50,7 @@
   align-items: center;
   height: 100vh;
 }
+
 .forgot-password-form {
   max-width: 400px;
   width: 100%;
@@ -63,6 +65,7 @@
   align-items: center;
   height: 100vh;
 }
+
 .change-password-form {
   max-width: 400px;
   width: 100%;
@@ -77,6 +80,7 @@
   align-items: center;
   height: 100vh;
 }
+
 .resend-confirmation-form {
   max-width: 400px;
   width: 100%;
